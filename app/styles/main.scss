@@ -47,7 +47,7 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
+.container {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 
@@ -56,7 +56,15 @@ body {
     padding: 14px 24px;
   }
 }
+.registerForm {
+  input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
 
+  input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+}
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -84,7 +92,7 @@ body {
     margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
+  .container {
     border-bottom: 0;
   }
 }

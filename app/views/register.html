@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Create a New Account</h1>
+
+    <form novalidate class="registerForm" name="registerForm">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input ng-model="user.email" type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" id="password1" name="password1" ng-model="user.password1"
+                   placeholder="Password" class="form-control" ng-required/>
+        </div>
+        <div class="form-group">
+            <label for="password2">Type Password Again</label>
+            <input type="password" id="password2" name="password2" ng-model="user.password2" ng-required
+                   validate-equals="user.password1" placeholder="Retype Password" class="form-control"/>
+        </div>
+        <div ng-show="registerForm.$error">
+          <span ng-show="registerForm.password2.$error.inputmatches">Passwords don't match.</span>
+        </div>
+        <div class="form-group">
+            <label for="inputFirstName">First Name</label>
+            <input ng-model="user.firstName" type="text" class="form-control" id="inputFirstName" placeholder="FirstName" required>
+        </div>
+        <div class="form-group">
+            <label for="inputLastName">Last Name</label>
+            <input ng-model="user.lastName" type="text" class="form-control" id="inputLastName" placeholder="LastName" required>
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="reset()">Reset</button>
+        <button ng-click="update(user)" type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <pre>user = {{user | json}}</pre>
+    <pre>master = {{master | json}}</pre>
+    <!--{{ message }}-->
+</div>
